@@ -2,17 +2,20 @@
 
 + (instancetype)universalStoryboardWithName:(NSString *)storyboardName {
     
-    UIStoryboard *storyboard = nil;
+    NSString *fileName = storyboardName;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        storyboard = [UIStoryboard storyboardWithName:[storyboardName stringByAppendingString:@"~iPad"] bundle:nil];
+        fileName = [fileName stringByAppendingString:@"~ipad"];
     } else {
-        storyboard = [UIStoryboard storyboardWithName:[storyboardName stringByAppendingString:@"~iPhone"] bundle:nil];
+        fileName = [fileName stringByAppendingString:@"~iphone"];
     }
     
-    if (!storyboard) {
-        storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+    NSString *pathAndFileName = [[NSBundle mainBundle] pathForResource:fileName ofType:@"storyboard"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:pathAndFileName])
+    {
+        return [UIStoryboard storyboardWithName:fileName bundle:nil];
     }
-    return storyboard;
+    
+    return [UIStoryboard storyboardWithName:storyboardName bundle:nil];
 }
 
 + (id)instantiateViewControllerWithIdentifier:(NSString *)identifier inStoryboardWithName:(NSString *)storyboardName
