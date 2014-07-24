@@ -1,4 +1,4 @@
-@implementation UIApplication (TKAdditions)
+@implementation UIApplication (TKExtensions)
 
 + (NSString *)versionString
 {
