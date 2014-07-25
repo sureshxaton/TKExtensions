@@ -1,3 +1,5 @@
+#import "NSUserDefaults+KeyPath.h"
+
 @implementation NSUserDefaults (KeyPath)
 - (void)setBool:(BOOL)value forKeyPath:(NSString *)keyPath
 {

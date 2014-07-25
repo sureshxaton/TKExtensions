@@ -1,11 +1,3 @@
-//
-//  UIImage+Color.m
-//  EMTE
-//
-//  Created by Taras Kalapun on 24/07/14.
-//  Copyright (c) 2014 Xaton. All rights reserved.
-//
-
 #import "UIImage+Color.h"
 
 @implementation UIImage (Color)
@@ -19,7 +11,7 @@ static CGFloat edgeSizeFromCornerRadius(CGFloat cornerRadius) {
 }
 
 + (instancetype)imageWithColor:(UIColor *)color cornerRadius:(CGFloat)cornerRadius {
-    CGFloat minEdgeSize = 1;
+    CGFloat minEdgeSize = edgeSizeFromCornerRadius(cornerRadius);
     CGRect rect = CGRectMake(0, 0, minEdgeSize, minEdgeSize);
     UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius];
     roundedRect.lineWidth = 0;

@@ -10,7 +10,7 @@
 
 typedef void (^MKMapSnapshotImageCompletionHandler)(UIImage *image, NSError *error);
 
-@interface MKMapSnapshotter (TKExtensions)
+@interface MKMapSnapshotter (TKE)
 + (void)snapshotImageWithCoordinate:(CLLocationCoordinate2D)coordinate size:(CGSize)size handler:(MKMapSnapshotImageCompletionHandler)handler;
 + (void)snapshotImageWithRegion:(MKCoordinateRegion)region size:(CGSize)size handler:(MKMapSnapshotImageCompletionHandler)handler;
 + (void)snapshotImageWithAddressString:(NSString *)address size:(CGSize)size handler:(MKMapSnapshotImageCompletionHandler)handler;

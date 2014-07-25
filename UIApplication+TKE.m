@@ -1,4 +1,6 @@
-@implementation UIApplication (TKExtensions)
+#import "UIApplication+TKE.h"
+
+@implementation UIApplication (TKE)
 
 + (NSString *)versionString
 {

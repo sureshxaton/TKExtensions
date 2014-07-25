@@ -1,4 +1,6 @@
-@implementation UIStoryboard (TKExtensions)
+#import "UIStoryboard+TKE.h"
+
+@implementation UIStoryboard (TKE)
 
 + (instancetype)universalStoryboardWithName:(NSString *)storyboardName {
     

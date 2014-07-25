@@ -1,5 +1,7 @@
+#import "SVProgressHUD+TKE.h"
+
 #ifdef COCOAPODS_POD_AVAILABLE_SVProgressHUD
-@implementation SVProgressHUD (TKExtensions)
+@implementation SVProgressHUD (TKE)
 
 + (void)showBlocking
 {
