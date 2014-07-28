@@ -2,6 +2,9 @@
 #import "NSUserDefaults+KeyPath.h"
 #import "UIApplication+TKE.h"
 
+#import "NSString+TKE.h"
+
+#import "UIColor+TKE.h"
 #import "UIImage+Color.h"
 #import "UIImage+QRCode.h"
 
