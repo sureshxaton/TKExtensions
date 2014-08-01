@@ -1,5 +1,5 @@
 //
-//  NSString+TKE.h
+//  NSObject+TKE.h
 //  EMTE
 //
 //  Created by Taras Kalapun on 28/07/14.
@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (TKE)
+@interface NSObject (TKE)
 
-- (BOOL)contains:(NSString *)s;
-- (BOOL)isAllDigits;
+@property (nonatomic, strong) NSString *identifierKey;
 
 @end

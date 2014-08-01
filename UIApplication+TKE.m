@@ -2,7 +2,7 @@
 
 @implementation UIApplication (TKE)
 
-+ (NSString *)versionString
+- (NSString *)versionString
 {
     NSString *versionString;
     NSString *bundleShortVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
