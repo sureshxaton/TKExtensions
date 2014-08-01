@@ -24,16 +24,20 @@
     [self sizeToFit];
     CGRect rect = self.frame;
     
-    CGFloat maxW = 320;
+    CGFloat maxW = 290;
     CGFloat padding = 20;
     CGFloat padding2 = 40;
     
     CGFloat superW = self.superview.bounds.size.width;
-    if (superW <= maxW && rect.size.width < (superW - padding2)) {
-        rect.origin.x = padding;
-        rect.size.width = superW - padding2;
-        self.frame = rect;
+    rect.origin.x = padding;
+    rect.size.width = superW - padding2;
+
+    if (rect.size.width > maxW) {
+        rect.size.width = maxW;
     }
+    
+    self.frame = rect;
+
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius {
