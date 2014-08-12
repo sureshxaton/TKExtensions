@@ -13,7 +13,7 @@
 
 + (void)snapshotImageWithCoordinate:(CLLocationCoordinate2D)coordinate size:(CGSize)size handler:(MKMapSnapshotImageCompletionHandler)handler
 {
-    CLLocationDistance d = 80;
+    CLLocationDistance d = 500;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, d, d);
     [self snapshotImageWithRegion:region size:size handler:handler];
 }
