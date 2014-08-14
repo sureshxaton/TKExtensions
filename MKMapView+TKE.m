@@ -61,36 +61,6 @@
     }
     
     [self showAnnotations:anns animated:YES];
-    return;
-    
-    CGFloat maxLat = CGFLOAT_MIN;
-    CGFloat maxLon = CGFLOAT_MIN;
-    CGFloat minLat = CGFLOAT_MAX;
-    CGFloat minLon = CGFLOAT_MAX;
-    
-    for (id<MKAnnotation> annotation in self.annotations) {
-        if (annotation.coordinate.latitude > maxLat) {
-            maxLat = annotation.coordinate.latitude;
-        }
-        
-        if (annotation.coordinate.longitude > maxLon) {
-            maxLon = annotation.coordinate.longitude;
-        }
-        
-        if (annotation.coordinate.latitude < minLat) {
-            minLat = annotation.coordinate.latitude;
-        }
-        
-        if (annotation.coordinate.longitude < minLon) {
-            minLon = annotation.coordinate.longitude;
-        }
-    }
-    
-    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake((maxLat + minLat) / 2.0f, (maxLon + minLon) / 2.0f);
-    MKCoordinateSpan span = MKCoordinateSpanMake(MAX(maxLat - minLat - 0.2, 0.04), MAX(maxLon - minLon + 0.2, 0.04));
-    MKCoordinateRegion region = MKCoordinateRegionMake(centerCoordinate, span);
-    
-    [self setRegion:region animated:animated];
 }
 
 @end
