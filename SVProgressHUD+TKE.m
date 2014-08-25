@@ -12,7 +12,12 @@ static NSString *currentDisplayedError = nil;
 + (void)showError:(NSError *)error
 {
     NSString *errorDescription = (error) ? [error localizedDescription] : nil;
-    [SVProgressHUD showErrorWithStatus:errorDescription];
+    if (error.code != NSURLErrorCancelled) {
+            [SVProgressHUD showErrorWithStatus:errorDescription];
+    }
+    else {
+        [SVProgressHUD dismiss];
+    }
 }
 
 + (void)dismissWithPossibleMessage:(id)responce
