@@ -44,7 +44,7 @@ static NSString *currentDisplayedError = nil;
     NSString *errorDescription = nil;
     if ([errorDescription length] > 0 && ![errorDescription isEqualToString:currentDisplayedError]) {
         currentDisplayedError = errorDescription;
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:errorDescription delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:errorDescription delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
         [alert show];
     }
     [SVProgressHUD dismiss];
